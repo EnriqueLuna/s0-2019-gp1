@@ -51,7 +51,11 @@ TOOLPREFIX := $(shell if i386-jos-elf-objdump -i 2>&1 | grep '^elf32-i386$$' >/d
 endif
 
 # If the makefile can't find QEMU, specify its path here
+<<<<<<< HEAD
 QEMU = qemu-system-i386
+=======
+ QEMU = qemu-system-i386
+>>>>>>> dff84ccdccec9a4c292881cbe2392711515c64a7
 
 # Try to infer the correct QEMU
 ifndef QEMU
@@ -182,6 +186,7 @@ UPROGS=\
 	_wc\
 	_zombie\
     _reboot\
+    _shutdown\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
@@ -219,7 +224,10 @@ QEMUGDB = $(shell if $(QEMU) -help | grep -q '^-gdb'; \
 	else echo "-s -p $(GDBPORT)"; fi)
 ifndef CPUS
 CPUS := 1
+<<<<<<< HEAD
 #un solo core
+=======
+>>>>>>> dff84ccdccec9a4c292881cbe2392711515c64a7
 endif
 QEMUOPTS = -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp $(CPUS) -m 512 $(QEMUEXTRA)
 
