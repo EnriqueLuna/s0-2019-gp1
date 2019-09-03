@@ -90,6 +90,11 @@ sys_uptime(void)
   return xticks;
 }
 
+int sys_reboot(void){
+    outw(0x64, 0xFE);
+    return 0;
+}
+
 int sys_shutdown(void){//codigo a ejecutar cuando busque sys_shutdown
     outw(0x604, 0x2000);
     return 0;
