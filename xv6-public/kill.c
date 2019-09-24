@@ -15,7 +15,7 @@ main(int argc, char **argv)
     if(atoi(argv[i])!=1){
         kill(atoi(argv[i]));
     }else{
-        printf(2,"No se mata init\n");
+        printf(2,"No muere init\n");
     }
   exit();
 }

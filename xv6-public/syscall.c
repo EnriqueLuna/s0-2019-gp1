@@ -156,8 +156,8 @@ static int (*syscalls[])(void) = {
     "close",
     "reboot",
     "shutdown"
-};
-*/
+};*/
+
 void
 syscall(void)
 {
